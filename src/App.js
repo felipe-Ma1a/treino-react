@@ -1,23 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import Texto from './components/texto/texto.js';
+import Button from './components/button/button.js';
+
+const showAlert = (label) => {
+  alert(`A label do botão é: '${label}' `)
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+
+    <Texto 
+      color='red'
+      textTransform='uppercase'
+    />
+
+    <Texto />
+
+    <Button
+      label='Clique aqui para receber um alert' 
+      showAlert={showAlert}
+    />
+
+    <Button
+      label='Mais um alert para testar' 
+      showAlert={showAlert}
+    />
+    
     </div>
   );
 }
